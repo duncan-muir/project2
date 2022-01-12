@@ -1,4 +1,5 @@
 import networkx as nx
+from collections import OrderedDict
 
 class Graph:
     """
@@ -21,7 +22,31 @@ class Graph:
         * If there is an end node and a path does not exist, return None
 
         """
-        return
+        # initialize queue with starting node
+        queue = [start]
+
+        visited = OrderedDict({start: None})
+
+        while len(queue) > 0:
+            curr = queue.pop(0)
+
+            if curr == end:
+                path = [curr]
+                while curr != start:
+                    curr = visited[curr]
+                    path.insert(0, curr)
+                return path
+
+            neighbors = self.graph.adj[curr]
+            for neighbor in neighbors:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited[neighbor] = curr
+
+        if end:
+            return None
+        else:
+            return list(visited.keys())
 
 
 
