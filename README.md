@@ -1,5 +1,9 @@
 # Project 2
-Breadth-first search
+## Breadth-first search
+Duncan Muir
+
+! [BuildStatus] (https://github.com/duncan-muir/project2/workflows/project2/badge.svg?event=push)
+
 
 # Assignment Overview
 The purpose of this assignment is to get you comfortable working with graph structures and to implement a breadth-first search function to traverse the graph and find the shortest path between nodes.
