@@ -2,7 +2,7 @@
 ## Breadth-first search
 Duncan Muir
 
-! [BuildStatus] (https://github.com/duncan-muir/project2/workflows/project2/badge.svg?event=push)
+![BuildStatus](https://github.com/duncan-muir/project2/workflows/project2/badge.svg?event=push)
 
 
 # Assignment Overview
