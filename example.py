@@ -1,6 +1,4 @@
 from search.graph import Graph
-import matplotlib.pyplot as plt
-import networkx as nx
 
 
 def main():
@@ -8,9 +6,6 @@ def main():
 
     print(graph.bfs("Rosalind Franklin"))
 
-    # subax1 = plt.subplot(121)
-    # nx.draw(graph.graph, with_labels=True, font_weight='bold')
-    # plt.show()
 
 if __name__ == '__main__':
     main()

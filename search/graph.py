@@ -2,6 +2,7 @@ import networkx as nx
 from collections import OrderedDict
 from typing import Union, List
 
+
 class Graph:
     """
     Class to contain a graph and your bfs function
@@ -22,7 +23,9 @@ class Graph:
         * If there is an end node and a path exists, return a list of the shortest path
         * If there is an end node and a path does not exist, return None
 
-
+        OrderedDict is implemented to track visitation to enable:
+            * constant time look-up for key existence
+            * obtaining traversal order from ordered keys
         """
 
         # check if starting node is valid, return if none (could be a throw, but returning none makes sense)
@@ -51,7 +54,7 @@ class Graph:
                     path.insert(0, curr)
                 return path
 
-            # find neighbors, add to queue and visited dict if not already existent
+            # find neighbors, add to queue, and add visited dict if not already existent
             neighbors = self.graph.adj[curr]
             for neighbor in neighbors:
                 if neighbor not in visited:
@@ -65,7 +68,3 @@ class Graph:
         # no end node provide, return graph traversal
         else:
             return list(visited.keys())
-
-
-
-

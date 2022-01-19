@@ -5,7 +5,7 @@ from search import Graph
 
 def test_bfs_traversal_micro():
     """
-
+    Test that traversal occurs properly on micro_network
     """
     graph = Graph("./data/micro_network.adjlist")
     traversal = graph.bfs("Lani Wu")
@@ -15,7 +15,7 @@ def test_bfs_traversal_micro():
 
 def test_bfs_traversal_tiny():
     """
-
+    Test that traversal occurs properly on tiny_network
     """
     graph = Graph("./data/tiny_network.adjlist")
     traversal = graph.bfs("Charles Chiu")
@@ -58,16 +58,39 @@ def test_bfs_citation():
 
 def test_bfs_fail_micro():
     """
-
+    Test failure on micro_network where no valid path exists
     """
     graph = Graph("./data/micro_network.adjlist")
     path = graph.bfs("Lani Wu", "Neil Risch")
     assert path is None
 
+
 def test_bfs_fail_tiny():
     """
-
+    Test failure on tiny_network when end node is not in graph
     """
     graph = Graph("./data/tiny_network.adjlist")
     path = graph.bfs("Lani Wu", "Bob Barker")
+    assert path is None
+
+
+def test_bfs_traversal_fail_citation():
+    """
+    Test traversal failure when start does not exist
+    """
+    graph = Graph("./data/citation_network.adjlist")
+
+    path = graph.bfs("James Bond")
+
+    assert path is None
+
+
+def test_bfs_fail_citation():
+    """
+    Test search failure when start does not exist
+    """
+    graph = Graph("./data/citation_network.adjlist")
+
+    path = graph.bfs("James Bond", "Luke Gilbert")
+
     assert path is None
